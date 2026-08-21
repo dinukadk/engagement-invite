@@ -1,4 +1,4 @@
-/* --- මූලික සැකසුම් --- */
+/* --- Basic Resets --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,26 +6,56 @@
 }
 
 body {
-    background-color: #e9e2db; 
+    background-color: #1a1a1a; 
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center; 
     min-height: 100vh;
 }
 
+/* --- Moving Animated Background --- */
 .mobile-container {
     width: 100%;
     max-width: 450px; 
-    background-color: #ffffff; 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    /* අලුත් Premium Gradient පසුබිම */
+    background: linear-gradient(-45deg, #fffcf9, #f7efe6, #f3e6d8, #fffcf9);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4); 
     overflow-x: hidden;
     position: relative;
 }
 
-/* --- අලුත් Scroll Animation Class --- */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 10;
+}
+
+/* --- JS Floating Gold Particles --- */
+.floating-particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(204, 168, 139, 0.8) 0%, rgba(204, 168, 139, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatUp infinite alternate ease-in-out;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0.1; }
+    100% { transform: translateY(-80px) scale(1.5); opacity: 0.6; }
+}
+
+/* --- Scroll Animations --- */
 .fade-in {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -34,7 +64,7 @@ body {
     transform: translateY(0);
 }
 
-/* --- වීඩියෝ කොටස --- */
+/* --- Video Section --- */
 .video-section {
     position: relative;
     width: 100%;
@@ -55,7 +85,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); 
+    background: rgba(0, 0, 0, 0.25); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,10 +96,13 @@ body {
 
 .video-overlay-text p {
     font-size: 13px;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     text-transform: uppercase;
+    font-weight: 500;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
+/* Scroll Arrow */
 .scroll-indicator {
     position: absolute;
     bottom: 20px; 
@@ -78,67 +111,75 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0.8;
 }
-
 .scroll-text {
     font-size: 9px !important;
-    letter-spacing: 1px !important;
+    letter-spacing: 2px !important;
     margin-bottom: 5px !important;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
-
 .arrow {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     transform: rotate(45deg);
     animation: bounce 2s infinite; 
 }
-
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); }
     40% { transform: translateY(-8px) rotate(45deg); }
     60% { transform: translateY(-4px) rotate(45deg); }
 }
 
-/* --- ආරාධනා වාක්‍ය කොටස --- */
+/* --- Welcome Message (Premium Sinhala Text) --- */
 .welcome-section {
-    padding: 50px 25px 30px;
+    padding: 35px 25px 25px; 
     text-align: center;
 }
 
-.divider {
-    color: #cca88b;
-    font-size: 18px;
-    margin: 10px 0;
-}
-
 .sinhala-text {
-    font-size: 14px;
-    color: #666666;
-    line-height: 2;
+    font-family: 'Abhaya Libre', serif;
+    font-size: 23px; /* සයිස් එක ගොඩක් ලොකු කළා */
+    font-weight: 800; /* Bold කළා */
+    line-height: 1.4;
+    
+    /* රත්තරන් පාට Premium Gradient අකුරු */
+    background: linear-gradient(45deg, #8a5a44, #c39274, #8a5a44);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 15px rgba(195, 146, 116, 0.2);
+    
+    margin: 0; /* උඩ යට Space එක නැති කළා */
 }
 
-/* --- පින්තූර කොටස --- */
+/* --- Image Section --- */
 .image-section {
     width: 100%;
-    padding: 0 20px 20px;
+    padding: 10px 20px 30px;
     display: flex;
     justify-content: center;
 }
 
-.image-section img {
-    width: 75%; 
-    max-width: 280px;
-    border-radius: 50%; 
-    border: 6px solid #f9f6f3;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+.image-border-glow {
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(45deg, #e8ccb8, #ffffff, #e8ccb8);
+    box-shadow: 0 10px 30px rgba(138, 90, 68, 0.15);
 }
 
-/* --- විස්තර කොටස --- */
+.image-section img {
+    display: block;
+    width: 250px; 
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%; 
+    border: 4px solid #ffffff;
+}
+
+/* --- Details Cards (Pulsing Glow Effect) --- */
 .details-section {
-    padding: 20px 20px 40px;
+    padding: 0 20px 30px;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -147,130 +188,140 @@ body {
 .detail-card {
     text-align: center;
     padding: 25px 15px;
-    background-color: #fdfbf9;
-    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
     border: 1px solid #f2ebe3;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* ස්වයංක්‍රීයව දිලිසෙන (Breathing) Effect එක */
+    animation: cardPulse 3s infinite alternate;
+    transition: transform 0.3s ease;
 }
 
-/* Card එක උඩට ඇඟිල්ල තියද්දි (Hover) පොඩියට උඩට එනවා */
+@keyframes cardPulse {
+    0% { box-shadow: 0 5px 15px rgba(204, 168, 139, 0.1); border-color: #f2ebe3; }
+    100% { box-shadow: 0 10px 30px rgba(204, 168, 139, 0.4); border-color: #e8ccb8; }
+}
+
 .detail-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transform: translateY(-5px) scale(1.02); 
 }
 
-/* Titles (THE DATE, THE TIME) - ගොඩක් පැහැදිලි වෙනසක් */
+/* Titles */
 .title-label {
     font-family: 'Poppins', sans-serif;
     font-size: 11px;
-    color: #b0917a;
+    font-weight: 600;
+    color: #a8856c;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
 }
 
-/* --- Date Styles --- */
+/* Date Styles */
 .date-highlight {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .date-highlight .month {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 22px;
     color: #444444;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
-
 .date-highlight .day {
-    font-size: 55px;
+    font-size: 65px;
     font-family: 'Playfair Display', serif;
-    color: #222222;
+    color: #1a1a1a;
     line-height: 1;
     margin: 5px 0;
 }
-
 .date-highlight .year {
-    font-size: 14px;
-    letter-spacing: 2px;
+    font-size: 15px;
+    letter-spacing: 3px;
     color: #777777;
     border-top: 1px solid #e0d5cb;
-    padding-top: 8px;
-    width: 50%;
+    padding-top: 10px;
+    width: 40%;
 }
 
 /* Time & Venue Data Styles */
 .time-data {
     font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    color: #222222;
+    font-size: 32px;
+    color: #1a1a1a;
 }
-
 .venue-data {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: #222222;
-    margin-bottom: 5px;
+    font-size: 26px;
+    color: #1a1a1a;
+    margin-bottom: 8px;
 }
 
 .map-button {
     display: inline-block;
     margin-top: 15px;
-    padding: 12px 28px;
-    background-color: #3b3b3b;
-    color: #ffffff;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #2c2c2c, #1a1a1a);
+    color: #e8ccb8;
     text-decoration: none;
     border-radius: 30px;
     font-size: 12px;
-    letter-spacing: 1.5px;
-    transition: background-color 0.3s ease;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
 }
-
 .map-button:hover {
-    background-color: #1a1a1a;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    transform: translateY(-2px);
 }
 
 /* --- Footer Section --- */
 .footer-section {
     text-align: center;
-    padding: 30px 20px 0px; /* යටින් ඉඩ අඩු කලා */
-    background-color: #f7f3f0;
+    padding: 20px 20px 10px;
 }
 
 .with-love {
     font-style: italic;
-    color: #d65c70; /* Pinkish red color */
-    font-size: 12px; /* ගොඩක් කුඩා කළා */
-    margin-bottom: 8px;
+    color: #d65c70; 
+    font-size: 12px; 
+    margin-bottom: 5px;
 }
 
 .footer-section h2 {
     font-family: 'Playfair Display', serif;
-    color: #333333;
-    font-size: 22px;
-    line-height: 1.4;
-    padding-bottom: 40px; /* නම් දෙකට පස්සේ හොඳ ඉඩක් */
+    color: #2c2c2c;
+    font-size: 24px;
+    line-height: 1.3;
 }
 
-/* --- Developer Credit Section --- */
+/* --- Premium Developer Button --- */
 .developer-credit {
-    background-color: #faf8f6; /* ඉතාමත් ලා පසුබිම් වර්ණයක් */
     text-align: center;
-    padding: 12px 0; /* කොටස කුඩා කළා */
-    margin-top: auto; /* අනිත් ඒවගෙන් ගොඩක් යටට තල්ලු කළා */
+    padding: 30px 0 40px 0; 
 }
 
-.developer-credit a {
+.dev-button {
     display: inline-block;
-    font-size: 9px;
-    color: #c4b9b1; /* අකුරු ලා පාට කළා (Highlight වෙන්නේ නෑ) */
+    font-size: 10px;
+    font-weight: 500;
+    color: #e8ccb8; /* රත්තරන් පාට අකුරු */
+    background-color: #3b2f28; /* තද දුඹුරු/කළු පසුබිම */
     text-decoration: none;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     font-family: 'Poppins', sans-serif;
-    transition: color 0.3s ease;
+    padding: 10px 25px; 
+    border-radius: 25px; /* සම්පූර්ණ රවුම් බොත්තමක් */
+    box-shadow: 0 5px 15px rgba(59, 47, 40, 0.3); /* ලස්සන Shadow එකක් */
+    transition: all 0.3s ease;
 }
 
-.developer-credit a:hover {
-    color: #9c8e83; 
+.dev-button:hover {
+    background-color: #2a201b; 
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(59, 47, 40, 0.5);
 }

@@ -4,99 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samod & Mithuni - Engagement</title>
-    <!-- CSS ගොනුව සම්බන්ධ කිරීම -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- ලස්සන Fonts සඳහා Google Fonts භාවිතා කිරීම -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@600;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="mobile-container">
+    <div class="mobile-container" id="app-container">
         
-        <!-- ========================================== -->
-        <!-- 1. VIDEO SECTION                           -->
-        <!-- ========================================== -->
-        <div class="video-section">
-            <video autoplay loop muted playsinline>
-                <source src="assets/Couple_Video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="content-wrapper">
             
-            <div class="video-overlay-text">
-                <p>WE ARE GETTING ENGAGED</p>
+            <!-- 1. VIDEO SECTION -->
+            <div class="video-section">
+                <video autoplay loop muted playsinline>
+                    <source src="assets/Couple_Video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 
-                <div class="scroll-indicator">
-                    <p class="scroll-text">Scroll Down</p>
-                    <div class="arrow"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ========================================== -->
-        <!-- 2. WELCOME MESSAGE SECTION                 -->
-        <!-- ========================================== -->
-        <div class="welcome-section fade-in">
-            <div class="divider">✧</div>
-            <p class="sinhala-text">
-                අපගේ ජීවිතයේ සුන්දරම ආරම්භය සනිටුහන් කරන මේ මොහොතට,<br> අපට ආදරය කරන ඔබ සැමට ආදරයෙන් ආරාධනා කරමු.
-            </p>
-            <div class="divider">✧</div>
-        </div>
-
-        <!-- ========================================== -->
-        <!-- 3. COUPLE IMAGE SECTION                    -->
-        <!-- ========================================== -->
-        <div class="image-section fade-in">
-            <img src="assets/Couple_Image.jpeg" alt="Couple Image">
-        </div>
-
-        <!-- ========================================== -->
-        <!-- 4. EVENT DETAILS SECTION                   -->
-        <!-- ========================================== -->
-        <div class="details-section">
-            
-            <div class="detail-card fade-in">
-                <h3 class="title-label">The Date</h3>
-                <div class="date-highlight">
-                    <span class="month">September</span>
-                    <span class="day">18</span>
-                    <span class="year">2026</span>
+                <div class="video-overlay-text">
+                    <p>WE ARE GETTING ENGAGED</p>
+                    
+                    <div class="scroll-indicator">
+                        <p class="scroll-text">Scroll Down</p>
+                        <div class="arrow"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="detail-card fade-in">
-                <h3 class="title-label">The Time</h3>
-                <p class="time-data">09:00 AM</p>
+            <!-- 2. WELCOME MESSAGE SECTION -->
+            <div class="welcome-section fade-in">
+                <!-- අකුරු වලට Gold Gradient එකක් සහ ලොකු පෙනුමක් -->
+                <p class="sinhala-text">
+                    අපගේ ජීවිතයේ සුන්දරම ආරම්භය සනිටුහන් කරන මේ මොහොතට, අපට ආදරය කරන ඔබ සැමට ආදරයෙන් ආරාධනා කරමු.
+                </p>
             </div>
 
-            <div class="detail-card fade-in">
-                <h3 class="title-label">The Venue</h3>
-                <p class="venue-data">Grand Highway Resort</p>
-                <a href="https://maps.app.goo.gl/xDQbW3EKpNn6iKFm9" target="_blank" class="map-button">Open in Google Maps</a>
+            <!-- 3. COUPLE IMAGE SECTION -->
+            <div class="image-section fade-in">
+                <div class="image-border-glow">
+                    <img src="assets/Couple_Image.jpeg" alt="Couple Image">
+                </div>
             </div>
-            
-        </div>
 
-        <!-- ========================================== -->
-        <!-- 5. FOOTER SECTION                          -->
-        <!-- ========================================== -->
-        <div class="footer-section fade-in">
-            <p class="with-love">With Love,</p>
-            <h2>Samod Rashminda <br>&<br> Mithuni Thathsarani</h2>
-        </div>
+            <!-- 4. EVENT DETAILS SECTION -->
+            <div class="details-section">
+                
+                <div class="detail-card fade-in">
+                    <h3 class="title-label">The Date</h3>
+                    <div class="date-highlight">
+                        <span class="month">September</span>
+                        <span class="day">18</span>
+                        <span class="year">2026</span>
+                    </div>
+                </div>
 
-        <!-- ========================================== -->
-        <!-- 6. DEVELOPER CREDIT SECTION                -->
-        <!-- ========================================== -->
-        <div class="developer-credit">
-            <a href="https://dinukadk.github.io/portfoliodinukadk/index.html" target="_blank">Developed by Capital D ~ Tech Fixes</a>
-        </div>
+                <div class="detail-card fade-in">
+                    <h3 class="title-label">The Time</h3>
+                    <p class="time-data">09:00 AM</p>
+                </div>
 
+                <div class="detail-card fade-in">
+                    <h3 class="title-label">The Venue</h3>
+                    <p class="venue-data">Grand Highway Resort</p>
+                    <a href="https://maps.app.goo.gl/xDQbW3EKpNn6iKFm9" target="_blank" class="map-button">Open in Google Maps</a>
+                </div>
+                
+            </div>
+
+            <!-- 5. FOOTER SECTION -->
+            <div class="footer-section fade-in">
+                <p class="with-love">With Love,</p>
+                <h2>Samod Rashminda <br>&<br> Mithuni Thathsarani</h2>
+            </div>
+
+            <!-- 6. DEVELOPER CREDIT SECTION -->
+            <div class="developer-credit fade-in">
+                <a href="https://dinukadk.github.io/portfoliodinukadk/index.html" target="_blank" class="dev-button">Developed by Capital D ~ Tech Fixes</a>
+            </div>
+
+        </div>
     </div>
 
-    <!-- Scroll Animation එක සඳහා JavaScript කේතය (මේකෙන් තමයි ලස්සනට fade වෙලා එන්නේ) -->
+    <!-- JavaScript: Animations & Particles -->
     <script>
+        // Scroll Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -106,6 +98,23 @@
         }, { threshold: 0.1 });
         
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Floating Gold Particles Effect
+        const container = document.getElementById('app-container');
+        for (let i = 0; i < 25; i++) {
+            let particle = document.createElement('div');
+            particle.classList.add('floating-particle');
+            
+            let size = Math.random() * 8 + 3; 
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 6 + 5) + 's'; 
+            particle.style.animationDelay = (Math.random() * 5) + 's';
+            
+            container.appendChild(particle);
+        }
     </script>
 </body>
 </html>

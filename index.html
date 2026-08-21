@@ -12,11 +12,10 @@
 </head>
 <body>
 
-    <!-- Laptop එකෙන් බැලුවත් Phone එකක් වගේ මැදින් පේන්න මේ Container එක පාවිච්චි කරනවා -->
     <div class="mobile-container">
         
         <!-- ========================================== -->
-        <!-- 1. VIDEO SECTION (Top Hero Section)        -->
+        <!-- 1. VIDEO SECTION                           -->
         <!-- ========================================== -->
         <div class="video-section">
             <video autoplay loop muted playsinline>
@@ -27,7 +26,6 @@
             <div class="video-overlay-text">
                 <p>WE ARE GETTING ENGAGED</p>
                 
-                <!-- Scroll Down Indicator එක -->
                 <div class="scroll-indicator">
                     <p class="scroll-text">Scroll Down</p>
                     <div class="arrow"></div>
@@ -38,16 +36,18 @@
         <!-- ========================================== -->
         <!-- 2. WELCOME MESSAGE SECTION                 -->
         <!-- ========================================== -->
-        <div class="welcome-section">
+        <div class="welcome-section fade-in">
+            <div class="divider">✧</div>
             <p class="sinhala-text">
-                අපගේ ජීවිතයේ සුන්දරම ආරම්භය සනිටුහන් කරන මේ මොහොතට, අපට ආදරය කරන ඔබ සැමට ආදරයෙන් ආරාධනා කරමු.
+                අපගේ ජීවිතයේ සුන්දරම ආරම්භය සනිටුහන් කරන මේ මොහොතට,<br> අපට ආදරය කරන ඔබ සැමට ආදරයෙන් ආරාධනා කරමු.
             </p>
+            <div class="divider">✧</div>
         </div>
 
         <!-- ========================================== -->
-        <!-- 3. COUPLE IMAGE SECTION (1:1 Image)        -->
+        <!-- 3. COUPLE IMAGE SECTION                    -->
         <!-- ========================================== -->
-        <div class="image-section">
+        <div class="image-section fade-in">
             <img src="assets/Couple_Image.jpeg" alt="Couple Image">
         </div>
 
@@ -56,9 +56,8 @@
         <!-- ========================================== -->
         <div class="details-section">
             
-            <div class="detail-card">
-                <h3>The Date</h3>
-                <!-- අලුත් ලස්සන Date කොටස -->
+            <div class="detail-card fade-in">
+                <h3 class="title-label">The Date</h3>
                 <div class="date-highlight">
                     <span class="month">September</span>
                     <span class="day">18</span>
@@ -66,16 +65,15 @@
                 </div>
             </div>
 
-            <div class="detail-card">
-                <h3>The Time</h3>
-                <p class="bold-text"><<Time>></p>
+            <div class="detail-card fade-in">
+                <h3 class="title-label">The Time</h3>
+                <p class="time-data">09:00 AM</p>
             </div>
 
-            <div class="detail-card">
-                <h3>The Venue</h3>
-                <p class="bold-text"><<Location Name>></p>
-                <p><<Full Address>></p>
-                <a href="<<Google Maps Link Here>>" target="_blank" class="map-button">Open in Google Maps</a>
+            <div class="detail-card fade-in">
+                <h3 class="title-label">The Venue</h3>
+                <p class="venue-data">Grand Highway Resort</p>
+                <a href="https://maps.app.goo.gl/xDQbW3EKpNn6iKFm9" target="_blank" class="map-button">Open in Google Maps</a>
             </div>
             
         </div>
@@ -83,8 +81,8 @@
         <!-- ========================================== -->
         <!-- 5. FOOTER SECTION                          -->
         <!-- ========================================== -->
-        <div class="footer-section">
-            <p>With Love,</p>
+        <div class="footer-section fade-in">
+            <p class="with-love">With Love,</p>
             <h2>Samod Rashminda <br>&<br> Mithuni Thathsarani</h2>
         </div>
 
@@ -97,5 +95,17 @@
 
     </div>
 
+    <!-- Scroll Animation එක සඳහා JavaScript කේතය (මේකෙන් තමයි ලස්සනට fade වෙලා එන්නේ) -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

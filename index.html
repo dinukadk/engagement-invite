@@ -34,7 +34,7 @@
 
             <!-- 2. WELCOME MESSAGE SECTION -->
             <div class="welcome-section fade-in">
-                <!-- අකුරු වලට Gold Gradient එකක් සහ ලොකු පෙනුමක් -->
+                <!-- Darker Gold Gradient, Larger Text -->
                 <p class="sinhala-text">
                     අපගේ ජීවිතයේ සුන්දරම ආරම්භය සනිටුහන් කරන මේ මොහොතට, අපට ආදරය කරන ඔබ සැමට ආදරයෙන් ආරාධනා කරමු.
                 </p>
@@ -80,7 +80,9 @@
 
             <!-- 6. DEVELOPER CREDIT SECTION -->
             <div class="developer-credit fade-in">
-                <a href="https://dinukadk.github.io/portfoliodinukadk/index.html" target="_blank" class="dev-button">Developed by Capital D ~ Tech Fixes</a>
+                <a href="https://dinukadk.github.io/portfoliodinukadk/index.html" target="_blank" class="dev-button">
+                    Developed by <span class="brand-name">Capital D ~ Tech Fixes</span>
+                </a>
             </div>
 
         </div>
@@ -99,19 +101,23 @@
         
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Floating Gold Particles Effect
+        // Floating Gold Particles Effect (Updated for density & speed)
         const container = document.getElementById('app-container');
-        for (let i = 0; i < 25; i++) {
+        const particleCount = 45; // Increased count
+        
+        for (let i = 0; i < particleCount; i++) {
             let particle = document.createElement('div');
             particle.classList.add('floating-particle');
             
-            let size = Math.random() * 8 + 3; 
+            let size = Math.random() * 10 + 4; // Slightly larger base size
             particle.style.width = size + 'px';
             particle.style.height = size + 'px';
             particle.style.left = Math.random() * 100 + '%';
             particle.style.top = Math.random() * 100 + '%';
-            particle.style.animationDuration = (Math.random() * 6 + 5) + 's'; 
-            particle.style.animationDelay = (Math.random() * 5) + 's';
+            
+            // Faster animation speed
+            particle.style.animationDuration = (Math.random() * 4 + 3) + 's'; // 3s to 7s
+            particle.style.animationDelay = (Math.random() * 3) + 's';
             
             container.appendChild(particle);
         }
